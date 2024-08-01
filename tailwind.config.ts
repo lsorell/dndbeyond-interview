@@ -9,9 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "talent-calc": "url('/talent-calc-bg.png')",
+      },
+      colors: {
+        "talent-bg": "#0b1116",
+        "talent-border": "#13161a",
+        "talent-bright": "#313134",
+        "talent-mid": "#181919",
+        "talent-dark": "#060809",
+        "talent-blue": "#4a6786",
+        "talent-blue-bright": "#70ace9",
       },
     },
   },
