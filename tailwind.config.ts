@@ -11,6 +11,9 @@ const config: Config = {
       backgroundImage: {
         "talent-calc": "url('/talent-calc-bg.png')",
       },
+      boxShadow: {
+        glow: "0px 0px 8px 2px rgba(255,255,255,0.25)",
+      },
       colors: {
         "talent-bg": "#0b1116",
         "talent-border": "#13161a",
@@ -19,6 +22,9 @@ const config: Config = {
         "talent-dark": "#060809",
         "talent-blue": "#4a6786",
         "talent-blue-bright": "#70ace9",
+        "talent-path-font": "#c4c5c5",
+        "talent-path-border": "#202122",
+        "talent-path-light": "#313234",
       },
     },
   },

@@ -1,11 +1,14 @@
 import Image from "next/image";
 import { FC, MouseEvent, useState } from "react";
 
-interface TalentNodeProps {
+export interface TalentNodeOptions {
   icon: string;
   iconSelected: string;
-  iconText: string;
+  altText: string;
   selected: boolean;
+}
+
+interface TalentNodeProps extends TalentNodeOptions {
   onClick: () => void;
   onRightClick: (event: MouseEvent) => void;
 }
@@ -13,7 +16,7 @@ interface TalentNodeProps {
 export const TalentNode: FC<TalentNodeProps> = ({
   icon,
   iconSelected,
-  iconText,
+  altText,
   selected,
   onClick,
   onRightClick,
@@ -29,15 +32,15 @@ export const TalentNode: FC<TalentNodeProps> = ({
 
   return (
     <div
-      className={`group w-fit h-fit p-1 ${
-        selected ? "bg-talent-blue-bright" : "bg-talent-bright"
+      className={`w-fit h-fit z-10 p-1 ${
+        selected ? "bg-talent-blue-bright shadow-glow" : "bg-talent-bright"
       }`}
       onClick={onClick}
       onContextMenu={onRightClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Image src={source} alt={iconText} width={50} height={50} />
+      <Image src={source} alt={altText} width={50} height={50} />
     </div>
   );
 };
