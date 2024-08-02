@@ -16,9 +16,9 @@ export const TalentPath: React.FC<TalentPathProps> = ({
 }) => {
   return (
     <div className="flex justify-start items-center ml-5 mt-10">
-      <h2 className="uppercase w-28 text-sm text-talent-path-font mr-10">
+      <h3 className="uppercase w-28 text-sm text-talent-path-font mr-10">
         {title}
-      </h2>
+      </h3>
       {talentNodes.map((node, index) => (
         <Fragment key={index}>
           <TalentNode

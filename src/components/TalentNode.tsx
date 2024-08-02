@@ -24,7 +24,6 @@ export const TalentNode: FC<TalentNodeProps> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const source = selected || isHovered ? iconSelected : icon;
-  console.log(source);
   return (
     <div
       className={`w-fit h-fit z-10 p-1 ${

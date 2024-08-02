@@ -25,6 +25,7 @@ const config: Config = {
         "talent-path-font": "#c4c5c5",
         "talent-path-border": "#202122",
         "talent-path-light": "#313234",
+        "talent-point-border": "#101214",
       },
     },
   },

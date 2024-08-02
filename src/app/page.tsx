@@ -145,25 +145,30 @@ export default function TalentCalculator() {
 
   return (
     <main className="w-screen h-screen bg-talent-bg flex justify-center items-center">
-      <Image src={"/skull-sprite.png"} alt={"Skull"} width={50} height={50} />
       <div className="w-[998px] h-[373px] flex flex-col align-center bg-talent-calc bg-cover border-talent-border border-2">
         <div className="w-[95%] h-fit my-5 py-1 bg-talent-mid text-center">
           <h1 className="text-2xl">
             TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
           </h1>
         </div>
-        <div>
-          {talentPaths.map((path, index) => (
-            <TalentPath
-              key={index}
-              title={path.title}
-              talentNodes={path.talentNodes}
-              onNodeClick={(nodeIndex) => handleNodeClick(index, nodeIndex)}
-              onNodeRightClick={(nodeIndex, event) =>
-                handleNodeRightClick(index, nodeIndex, event)
-              }
-            />
-          ))}
+        <div className="flex">
+          <div>
+            {talentPaths.map((path, index) => (
+              <TalentPath
+                key={index}
+                title={path.title}
+                talentNodes={path.talentNodes}
+                onNodeClick={(nodeIndex) => handleNodeClick(index, nodeIndex)}
+                onNodeRightClick={(nodeIndex, event) =>
+                  handleNodeRightClick(index, nodeIndex, event)
+                }
+              />
+            ))}
+          </div>
+          <div className="w-[192px] h-[96px] ml-8 mt-16 flex flex-col justify-center items-center text-2xl bg-talent-dark border-2 border-talent-point-border">
+            <h2>{`${pointsUsed} / ${MAX_POINTS}`}</h2>
+            <h2 className="text-talent-blue">Points Spent</h2>
+          </div>
         </div>
       </div>
     </main>
