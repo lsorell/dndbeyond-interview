@@ -26,7 +26,7 @@ export const TalentNode: FC<TalentNodeProps> = ({
   const source = selected || isHovered ? iconSelected : icon;
   return (
     <div
-      className={`w-fit h-fit z-10 p-1 ${
+      className={`w-fit h-fit z-10 p-1 cursor-pointer ${
         selected ? "bg-talent-blue-bright shadow-glow" : "bg-talent-bright"
       }`}
       onClick={onClick}
