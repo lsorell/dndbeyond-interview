@@ -20,6 +20,8 @@ Then open [http://localhost:3000](http://localhost:3000) with your browser to se
 
 - Adding a slight background opacity to most of the elements
 - Creating a intricate/gradient border around each Talent to match the example
+- Brightening the div's between Talents when one is selected
+  - I couldn't quite tell how the logic for this was supposed to function. In the example, the div lights up after the first Chevron is selected and you would expect that something similar would happen in path two between the Scuba and Bolt because it's selected. However, it isn't brightened which is conflicting logic.
 
 ## Future Additions
 

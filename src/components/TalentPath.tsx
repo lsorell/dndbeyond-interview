@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { Fragment, MouseEvent } from "react";
 import { TalentNode, TalentNodeOptions } from "./TalentNode";
 
 interface TalentPathProps {
@@ -15,12 +15,13 @@ export const TalentPath: React.FC<TalentPathProps> = ({
   onNodeRightClick,
 }) => {
   return (
-    <div className="flex justify-start items-center m-5">
-      <h2 className="uppercase text-sm text-talent-path-font mr-10">{title}</h2>
+    <div className="flex justify-start items-center ml-5 mt-10">
+      <h2 className="uppercase w-28 text-sm text-talent-path-font mr-10">
+        {title}
+      </h2>
       {talentNodes.map((node, index) => (
-        <>
+        <Fragment key={index}>
           <TalentNode
-            key={index}
             icon={node.icon}
             iconSelected={node.iconSelected}
             altText={node.altText}
@@ -29,12 +30,9 @@ export const TalentPath: React.FC<TalentPathProps> = ({
             onRightClick={(event) => onNodeRightClick(index, event)}
           />
           {index !== talentNodes.length - 1 ? (
-            <div
-              key={index}
-              className="w-[108px] h-[16px] z-0 bg-talent-mid border-talent-path-border border-y-2"
-            />
+            <div className="w-[108px] h-[16px] z-0 bg-talent-mid border-talent-path-border border-y-2" />
           ) : null}
-        </>
+        </Fragment>
       ))}
     </div>
   );

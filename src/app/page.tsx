@@ -1,8 +1,7 @@
 "use client";
 
-import { TalentNodeOptions } from "@/components/TalentNode";
+import Image from "next/image";
 import { TalentPath } from "@/components/TalentPath";
-import path from "path";
 import { MouseEvent, useState } from "react";
 
 const CLICK_INPUT = {
@@ -41,6 +40,35 @@ export default function TalentCalculator() {
           icon: "/faded-crown-sprite.png",
           iconSelected: "/crown-sprite.png",
           altText: "Crown",
+          selected: false,
+        },
+      ],
+    },
+    {
+      title: "Talent Path 2",
+      talentNodes: [
+        {
+          icon: "/faded-boat-sprite.png",
+          iconSelected: "/boat-sprite.png",
+          altText: "Boat",
+          selected: false,
+        },
+        {
+          icon: "/faded-scuba-sprite.png",
+          iconSelected: "/scuba-sprite.png",
+          altText: "Scuba",
+          selected: false,
+        },
+        {
+          icon: "/faded-bolt-sprite.png",
+          iconSelected: "/bolt-sprite.png",
+          altText: "Bolt",
+          selected: false,
+        },
+        {
+          icon: "/faded-skull-sprite.png",
+          iconSelected: "/skull-sprite1.png",
+          altText: "Skull",
           selected: false,
         },
       ],
@@ -117,6 +145,7 @@ export default function TalentCalculator() {
 
   return (
     <main className="w-screen h-screen bg-talent-bg flex justify-center items-center">
+      <Image src={"/skull-sprite.png"} alt={"Skull"} width={50} height={50} />
       <div className="w-[998px] h-[373px] flex flex-col align-center bg-talent-calc bg-cover border-talent-border border-2">
         <div className="w-[95%] h-fit my-5 py-1 bg-talent-mid text-center">
           <h1 className="text-2xl">
