@@ -15,3 +15,13 @@ bun dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Known Differences From Example
+
+- Adding a slight background opacity to most of the elements
+- Creating a gradient border around each Talent to match the example
+
+## Future Additions
+
+- Play an border animation when a Talent is selected that spins and shines
+- Toggle if click cursor is show based on points spent and tree progression (previous has been selected)

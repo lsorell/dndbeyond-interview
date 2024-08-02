@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { FC, MouseEvent } from "react";
+import { FC, MouseEvent, useState } from "react";
 
 interface TalentNodeProps {
   icon: string;
+  iconSelected: string;
   iconText: string;
   selected: boolean;
   onClick: () => void;
@@ -11,24 +12,32 @@ interface TalentNodeProps {
 
 export const TalentNode: FC<TalentNodeProps> = ({
   icon,
+  iconSelected,
   iconText,
   selected,
   onClick,
   onRightClick,
 }) => {
+  const [source, setSource] = useState(icon);
+
+  const determineSource = (isHovered: boolean) => {
+    selected || isHovered ? setSource(iconSelected) : setSource(icon);
+  };
+
+  const handleMouseEnter = () => determineSource(true);
+  const handleMouseLeave = () => determineSource(false);
+
   return (
     <div
-      className={`p-4 ${selected ? "bg-blue-500" : "bg-gray-700"}`}
+      className={`group w-fit h-fit p-1 ${
+        selected ? "bg-talent-blue-bright" : "bg-talent-bright"
+      }`}
       onClick={onClick}
       onContextMenu={onRightClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <Image
-        src={icon}
-        alt={iconText}
-        width={50}
-        height={50}
-        className="w-8 h-8 md:w-12 md:h-12"
-      />
+      <Image src={source} alt={iconText} width={50} height={50} />
     </div>
   );
 };

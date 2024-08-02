@@ -14,7 +14,7 @@ const config: Config = {
       colors: {
         "talent-bg": "#0b1116",
         "talent-border": "#13161a",
-        "talent-bright": "#313134",
+        "talent-bright": "#414143",
         "talent-mid": "#181919",
         "talent-dark": "#060809",
         "talent-blue": "#4a6786",
